@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 22px;
+            color: #e63946;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .buy-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #457b9d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .buy-btn:hover {
+            background-color: #1d3557;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card">
+        <img src="images/product.jpg" alt="My Product">
+        <p class="price" id="price">Price: ₹0</p>
+        <a id="buy-link" href="#" target="_blank">
+            <button class="buy-btn">Buy Now</button>
+        </a>
+    </div>
+
+    <script>
+        // Random price between 300 and 500
+        let price = Math.floor(Math.random() * (500 - 300 + 1)) + 300;
+        document.getElementById("price").innerText = `Price: ₹${price}`;
+
+        // WhatsApp link with pre-filled message
+        let phoneNumber = "919999999999"; // <-- Replace with your number
+        let message = `Hi, I want to buy this product for ₹${price}`;
+        let whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        document.getElementById("buy-link").href = whatsappLink;
+    </script>
+
+</body>
+</html>
